@@ -13,6 +13,7 @@ import { Modal } from "../ui/Modal";
 import { Button } from "../ui/Button";
 import { formatCurrency } from "../../utils/formatCurrency";
 import type { CustomerOrder, CustomerOrderStatus } from "../../types/account";
+import { assetUrl } from "../../utils/withBase";
 
 const timelineSteps: {
   key: CustomerOrderStatus;
@@ -109,7 +110,7 @@ export function OrderDetailsModal({ order, onClose }: OrderDetailsModalProps) {
           {order.items.map((item) => (
             <div key={`${item.productId}-${item.size}`} className="flex gap-4 items-center">
               <img
-                src={item.image}
+                src={assetUrl(item.image)}
                 alt={item.name}
                 className="h-16 w-14 rounded-lg object-cover"
               />

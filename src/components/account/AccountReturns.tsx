@@ -7,6 +7,7 @@ import { Button } from "../ui/Button";
 import { Select } from "../ui/Select";
 import { Modal } from "../ui/Modal";
 import type { ReturnPreference } from "../../types/account";
+import { assetUrl } from "../../utils/withBase";
 
 const preferenceLabels: Record<ReturnPreference, string> = {
   size_exchange: "Trocar tamanho",
@@ -113,7 +114,7 @@ export function AccountReturns() {
               >
                 <div className="flex items-center gap-4">
                   <img
-                    src={item.image}
+                    src={assetUrl(item.image)}
                     alt={item.name}
                     className="h-16 w-14 rounded-lg object-cover"
                   />

@@ -13,6 +13,7 @@ import type { Product } from "../../types/product";
 import { PRODUCT_CATEGORIES } from "../../types/product";
 import { productToForm } from "../../hooks/useAdminProducts";
 import { Badge } from "../ui/Badge";
+import { assetUrl } from "../../utils/withBase";
 
 export function AdminProducts() {
   const { filterProducts, deleteProduct, updateProduct } = useAdminProducts();
@@ -132,7 +133,7 @@ export function AdminProducts() {
                     <td className="px-4 py-4">
                       <div className="flex items-center gap-3">
                         <img
-                          src={product.image}
+                          src={assetUrl(product.image)}
                           alt={product.name}
                           className="h-12 w-12 rounded-xl object-cover"
                         />

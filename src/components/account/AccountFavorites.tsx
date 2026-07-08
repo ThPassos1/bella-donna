@@ -8,6 +8,7 @@ import { Button } from "../ui/Button";
 import { useCart } from "../../hooks/useCart";
 import { useUIStore } from "../../hooks/useUIStore";
 import { RecommendedForYou } from "./RecommendedForYou";
+import { assetUrl } from "../../utils/withBase";
 
 export function AccountFavorites() {
   const { user } = useAuth();
@@ -62,7 +63,7 @@ export function AccountFavorites() {
           >
             <div className="relative aspect-[3/4]">
               <img
-                src={product.image}
+                src={assetUrl(product.image)}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />

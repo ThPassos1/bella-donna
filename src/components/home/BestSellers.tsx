@@ -4,6 +4,7 @@ import { useProducts } from "../../hooks/useProducts";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Button } from "../ui/Button";
 import { useCart } from "../../hooks/useCart";
+import { assetUrl } from "../../utils/withBase";
 
 export function BestSellers() {
   const { bestSellers } = useProducts();
@@ -48,7 +49,7 @@ export function BestSellers() {
 
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src={product.image}
+                  src={assetUrl(product.image)}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

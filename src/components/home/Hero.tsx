@@ -4,6 +4,7 @@ import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 
 import { useSettingsStore } from "../../stores/settingsStore";
+import { assetUrl } from "../../utils/withBase";
 
 export function Hero() {
   const settings = useSettingsStore((s) => s.settings);
@@ -96,7 +97,7 @@ export function Hero() {
                 style={{ perspective: "1000px" }}
               >
                 <img
-                  src="/images/hero.jpg"
+                  src={assetUrl("/images/hero.jpg")}
                   alt="Moda feminina elegante"
                   className="w-full h-[380px] sm:h-[500px] lg:h-[600px] object-cover"
                   loading="eager"

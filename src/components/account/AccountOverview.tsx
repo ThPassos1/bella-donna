@@ -12,6 +12,7 @@ import { useProducts } from "../../hooks/useProducts";
 import { demoCoupons } from "../../data/demoCoupons";
 import { FavoritesPreview } from "./FavoritesPreview";
 import { RecommendedForYou } from "./RecommendedForYou";
+import { assetUrl } from "../../utils/withBase";
 
 export function AccountOverview() {
   const { user, firstName } = useAuth();
@@ -139,7 +140,7 @@ export function AccountOverview() {
                   className="rounded-xl border border-elegant-black/5 overflow-hidden"
                 >
                   <img
-                    src={product.image}
+                    src={assetUrl(product.image)}
                     alt={product.name}
                     className="w-full h-40 object-cover"
                   />

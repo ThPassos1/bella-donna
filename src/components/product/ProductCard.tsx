@@ -9,6 +9,7 @@ import { useCart } from "../../hooks/useCart";
 import { useAuth } from "../../hooks/useAuth";
 import { useUserFavorites } from "../../hooks/useFavorites";
 import { cn } from "../../utils/cn";
+import { assetUrl } from "../../utils/withBase";
 
 interface ProductCardProps {
   product: Product;
@@ -63,7 +64,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     >
       <div className="relative aspect-[3/4] overflow-hidden">
         <img
-          src={product.image}
+          src={assetUrl(product.image)}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />

@@ -4,6 +4,7 @@ import { useProductStore } from "../../stores/productStore";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { AdminEmptyState } from "./shared/AdminEmptyState";
 import { Badge } from "../ui/Badge";
+import { assetUrl } from "../../utils/withBase";
 
 export function AdminBestSellers() {
   const { bestSellersFromOrders } = useAdminOrders();
@@ -46,7 +47,7 @@ export function AdminBestSellers() {
             </div>
             {item.product && (
               <img
-                src={item.product.image}
+                src={assetUrl(item.product.image)}
                 alt={item.name}
                 className="h-20 w-20 rounded-xl object-cover mb-3"
               />
@@ -97,7 +98,7 @@ export function AdminBestSellers() {
                       <div className="flex items-center gap-3">
                         {item.product && (
                           <img
-                            src={item.product.image}
+                            src={assetUrl(item.product.image)}
                             alt={item.name}
                             className="h-10 w-10 rounded-lg object-cover shrink-0"
                           />

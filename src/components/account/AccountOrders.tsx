@@ -9,7 +9,7 @@ import { Button } from "../ui/Button";
 import { OrderDetailsModal } from "./OrderDetailsModal";
 import { useCart } from "../../hooks/useCart";
 import { useProducts } from "../../hooks/useProducts";
-import { withBase } from "../../utils/withBase";
+import { withBase, assetUrl } from "../../utils/withBase";
 
 export function AccountOrders() {
   const { user } = useAuth();
@@ -79,7 +79,7 @@ export function AccountOrders() {
               {order.items.slice(0, 3).map((item) => (
                 <div key={item.productId + item.size} className="flex items-center gap-2 rounded-xl bg-cream-dark/50 px-3 py-2">
                   <img
-                    src={item.image}
+                    src={assetUrl(item.image)}
                     alt={item.name}
                     className="h-10 w-10 rounded-lg object-cover"
                   />

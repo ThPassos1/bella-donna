@@ -2,6 +2,7 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { formatCurrency } from "../../utils/formatCurrency";
 import type { CartItem as CartItemType } from "../../types/cart";
 import { useCart } from "../../hooks/useCart";
+import { assetUrl } from "../../utils/withBase";
 
 interface CartItemProps {
   item: CartItemType;
@@ -14,7 +15,7 @@ export function CartItem({ item }: CartItemProps) {
   return (
     <div className="flex gap-3 sm:gap-4 py-4 border-b border-elegant-black/5">
       <img
-        src={item.product.image}
+        src={assetUrl(item.product.image)}
         alt={item.product.name}
         className="h-24 w-20 rounded-xl object-cover shrink-0"
       />

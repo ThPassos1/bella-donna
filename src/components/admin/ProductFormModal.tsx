@@ -9,6 +9,7 @@ import {
   emptyProductForm,
   useAdminProducts,
 } from "../../hooks/useAdminProducts";
+import { assetUrl } from "../../utils/withBase";
 
 interface ProductFormModalProps {
   open: boolean;
@@ -206,7 +207,7 @@ export function ProductFormModal({
               />
               {form.image && (
                 <img
-                  src={form.image}
+                  src={assetUrl(form.image)}
                   alt="Preview"
                   className="mt-2 h-24 w-24 rounded-xl object-cover"
                 />

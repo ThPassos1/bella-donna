@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { categories } from "../../data/categories";
 import { Button } from "../ui/Button";
+import { assetUrl } from "../../utils/withBase";
 
 export function Categories() {
   const scrollToProducts = () => {
@@ -38,7 +39,7 @@ export function Categories() {
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src={category.image}
+                  src={assetUrl(category.image)}
                   alt={category.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

@@ -8,6 +8,7 @@ import { ORDER_STATUS_FLOW, ORDER_STATUS_LABELS } from "../../types/account";
 import { AdminConfirmDialog } from "./shared/AdminConfirmDialog";
 import { useState } from "react";
 import { CheckCircle, Printer, XCircle } from "lucide-react";
+import { assetUrl } from "../../utils/withBase";
 
 interface OrderAdminDetailsModalProps {
   order: CustomerOrder | null;
@@ -74,7 +75,7 @@ export function OrderAdminDetailsModal({
                   className="flex items-center gap-3 rounded-xl bg-white border border-elegant-black/5 p-3"
                 >
                   <img
-                    src={item.image}
+                    src={assetUrl(item.image)}
                     alt={item.name}
                     className="h-14 w-14 rounded-lg object-cover"
                   />

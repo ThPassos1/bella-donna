@@ -6,6 +6,7 @@ import { Badge } from "../ui/Badge";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { useUIStore } from "../../hooks/useUIStore";
 import { useCart } from "../../hooks/useCart";
+import { assetUrl } from "../../utils/withBase";
 
 export function ProductModal() {
   const { selectedProduct, isProductModalOpen, closeProductModal, openCheckout } =
@@ -44,7 +45,7 @@ export function ProductModal() {
       <div className="grid md:grid-cols-2">
         <div className="relative aspect-[4/5] sm:aspect-square md:aspect-auto md:min-h-[400px] lg:min-h-[500px] overflow-hidden">
           <img
-            src={product.image}
+            src={assetUrl(product.image)}
             alt={product.name}
             className="w-full h-full object-cover"
           />

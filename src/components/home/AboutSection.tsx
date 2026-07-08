@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
+import { assetUrl } from "../../utils/withBase";
 
 const stats = [
   { value: "12", label: "Anos de experiência" },
@@ -22,7 +23,7 @@ export function AboutSection() {
           >
             <div className="rounded-3xl overflow-hidden premium-shadow-lg">
               <img
-                src="/images/about-boutique.jpg"
+                src={assetUrl("/images/about-boutique.jpg")}
                 alt="Boutique Bella Donna"
                 className="w-full h-[400px] object-cover"
               />

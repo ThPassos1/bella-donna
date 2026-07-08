@@ -8,6 +8,7 @@ import { formatCurrency } from "../../utils/formatCurrency";
 import { Button } from "../ui/Button";
 import { useCart } from "../../hooks/useCart";
 import { useUIStore } from "../../hooks/useUIStore";
+import { assetUrl } from "../../utils/withBase";
 
 interface FavoritesPreviewProps {
   limit?: number;
@@ -78,7 +79,7 @@ export function FavoritesPreview({ limit = 4, showTitle = true }: FavoritesPrevi
           >
             <div className="relative aspect-[3/4]">
               <img
-                src={product.image}
+                src={assetUrl(product.image)}
                 alt={product.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

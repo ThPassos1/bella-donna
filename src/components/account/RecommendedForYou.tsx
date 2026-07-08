@@ -5,6 +5,7 @@ import { formatCurrency } from "../../utils/formatCurrency";
 import { Button } from "../ui/Button";
 import { useCart } from "../../hooks/useCart";
 import { useUIStore } from "../../hooks/useUIStore";
+import { assetUrl } from "../../utils/withBase";
 
 interface RecommendedForYouProps {
   compact?: boolean;
@@ -82,7 +83,7 @@ export function RecommendedForYou({ compact = false }: RecommendedForYouProps) {
           >
             <div className="relative aspect-[4/3] overflow-hidden">
               <img
-                src={item.product.image}
+                src={assetUrl(item.product.image)}
                 alt={item.product.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
